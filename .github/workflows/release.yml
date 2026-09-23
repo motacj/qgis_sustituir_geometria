@@ -1,0 +1,37 @@
+name: Build release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test and build
+        run: |
+          python -m compileall -q __init__.py plugin.py map_tool.py tools tests
+          python -m unittest discover -s tests -v
+          python tools/build_plugin.py
+          python tools/validate_package.py dist/qgis_sustituir_geometria.zip
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "$GITHUB_REF_NAME"
+          dist/qgis_sustituir_geometria.zip
+          --verify-tag
+          --generate-notes
+          --title "Sustituir geometría $GITHUB_REF_NAME"

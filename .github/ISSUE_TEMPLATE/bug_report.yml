@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a reproducible problem in the QGIS plugin.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach private parcel data. Use a minimal anonymised sample.
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: qgis-version
+    attributes:
+      label: QGIS version and operating system
+      placeholder: QGIS 3.44.2 on Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Include layer types, CRS, and the exact click sequence.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: QGIS message or Python traceback
+      render: shell
