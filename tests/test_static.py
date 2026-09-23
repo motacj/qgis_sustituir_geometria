@@ -22,7 +22,7 @@ class PluginStaticTests(unittest.TestCase):
         metadata.optionxform = str
         metadata.read(ROOT / "metadata.txt", encoding="utf-8")
         general = metadata["general"]
-        self.assertEqual(general["version"], "1.0.0")
+        self.assertEqual(general["version"], "1.0.1")
         self.assertEqual(general["qgisMinimumVersion"], "3.28")
         self.assertEqual(general["category"], "Vector")
         self.assertEqual(

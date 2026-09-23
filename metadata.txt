@@ -3,7 +3,7 @@ name=Sustituir geometría mediante dos clics
 qgisMinimumVersion=3.28
 qgisMaximumVersion=3.99
 description=Copies the geometry of a second clicked vector feature, such as a parcel, onto a first clicked feature while preserving its attributes and identifier.
-version=1.0.0
+version=1.0.1
 author=Jesús Mota Campayo
 email=atom.susej@gmail.com
 homepage=https://github.com/motacj/qgis_sustituir_geometria#readme
@@ -18,4 +18,5 @@ deprecated=False
 server=False
 hasProcessingProvider=False
 tags=geometry,replace,copy,editing,vector,cadastre,parcel,undo
-changelog=1.0.0 - Initial release with two-click selection, cross-layer CRS transformation, attribute preservation, candidate choice, highlighting and undoable edits.
+changelog=1.0.1 - Rebuilt the publication package and explicitly verified the homepage, repository and tracker metadata required by the QGIS repository.
+    1.0.0 - Initial release with two-click selection, cross-layer CRS transformation, attribute preservation, candidate choice, highlighting and undoable edits.

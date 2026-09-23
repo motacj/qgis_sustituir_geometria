@@ -80,8 +80,8 @@ def validate(archive: Path) -> tuple[list[str], list[str]]:
             for key in REQUIRED_METADATA:
                 if not section.get(key, "").strip():
                     errors.append(f"Metadato obligatorio vacío: {key}")
-            if section.get("version") != "1.0.0":
-                errors.append("La versión del paquete debe ser 1.0.0")
+            if section.get("version") != "1.0.1":
+                errors.append("La versión del paquete debe ser 1.0.1")
             if section.get("category") != "Vector":
                 errors.append("La categoría debe ser Vector")
             expected_urls = {

@@ -1,5 +1,11 @@
 # Historial de cambios
 
+## 1.0.1
+
+- Paquete de publicación reconstruido con un nombre de archivo versionado.
+- Comprobación explícita de los metadatos `homepage`, `repository` y `tracker`.
+- Sin cambios en el funcionamiento de la herramienta.
+
 ## 1.0.0
 
 - Selección consecutiva mediante dos clics.
